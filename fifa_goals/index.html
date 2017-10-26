@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CS171 - HW 5</title>
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+	<div class="container">
+
+		<h1>FIFA World Cup<sup>TM</sup></h1>
+		<h2>All Time Statistics</h2>
+		<h4>Created by Luke Civantos</h4>
+
+
+		<select title="chart-options" class="form-control" id="ranking-type" onchange="updateVisualization()">
+			<option value="GOALS">Goals</option>
+			<option value="AVERAGE_GOALS">Average Goals</option>
+			<option value="MATCHES">Matches</option>
+			<option value="TEAMS">Teams</option>
+			<option value="AVERAGE_ATTENDANCE">Average Attendance</option>
+		</select>
+
+		<form id="filter-years">
+			Min Year<br>
+			<input type="text" name="firstname"><br>
+			Max Year<br>
+			<input type="text" name="lastname">
+			<button type="button" onclick="filterYears()">Update</button>
+		</form>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8">
+					<!-- Parent container for the visualization -->
+					<div id="chart-area"></div>
+				</div>
+				<div id="match-info" class="col-md-4">
+					<h4 id="edition-info"></h4>
+
+					<table class="table" style="width:100%">
+						<tr>
+							<th id="WINNER-title"></th>
+							<td id="WINNER-info"></td>
+						</tr>
+						<tr>
+							<th id="LOCATION-title"></th>
+							<td id="LOCATION-info"></td>
+						</tr>
+						<tr>
+							<th id="GOALS-title"></th>
+							<td id="GOALS-info"></td>
+						</tr>
+						<tr>
+							<th id="AVERAGE_ATTENDANCE-title"></th>
+							<td id="AVERAGE_ATTENDANCE-info"></td>
+						</tr>
+						<tr>
+							<th id="MATCHES-title"></th>
+							<td id="MATCHES-info"></td>
+						</tr>
+						<tr>
+							<th id="TEAMS-title"></th>
+							<td id="TEAMS-info"></td>
+						</tr>
+						<tr>
+							<th id="AVERAGE_GOALS-title"></th>
+							<td id="AVERAGE_GOALS-info"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Load JS libraries: jQuery, bootstrap, D3, D3 tooltip -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/d3.js"></script>
+	<script src="js/d3-tip.js"></script>
+
+	<!-- Your implementation -->
+	<script src="js/main.js"></script>
+</body>
+</html>
